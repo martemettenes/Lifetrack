@@ -16,12 +16,20 @@ body {
     background-color: rgb(74, 74, 74);
 }
 
-#content {
+
+#all-content {
     width: 350px;
     height: 600px;
-    background-color: rgb(74, 74, 74);
     margin: 0 auto;
     padding: 6%;
+}
+
+#content-overview {
+    /*width: 350px;
+    height: 600px;
+   background-color: rgb(74, 74, 74);
+    margin: 0 auto;
+    padding: 6%; */
 }
 
 .notepad {
@@ -29,22 +37,29 @@ body {
     height: 50%;
     bottom: 0;
     margin: 0 auto;
-    background-color: rgb(236, 236, 236);
+  /*  background-color: rgb(236, 236, 236); */
+    border-radius: 10px;
 }
 
-.squareone {
+.header {
     width: 100%;
     height: 10%;
+    padding-bottom: 3%;
+}
+
+.all-boxes {
+    width: 100%;
+    height: 90%;
 }
 
 .squaretwo {
     width: 100%;
-    height: 20%;
+    height: 10%;
 }
 
 .squarebottom {
     width: 100%;
-    height: 70%;
+    height: 80%;
 }
 
 .top {
@@ -54,11 +69,12 @@ body {
 }
 
 .date {
-    background-color: rgb(150, 193, 195);
+   /* background-color: rgb(150, 193, 195); */
     width: 100%;
     height: 15%;
     padding: 0;
     margin: 0 auto;
+    border-radius: 10px;
 }
 
 .inline {
@@ -89,6 +105,17 @@ img {
     padding: 8%;
 }
 
+.displaynone {
+    display: none;
+}
+
+#newlist {
+    width: 100%;
+}
+
+.form {
+    width: 100%;
+}
 
 /*----------
 
@@ -123,6 +150,7 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    padding-left: 10%;
 }
 
 li {
