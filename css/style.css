@@ -21,13 +21,7 @@ body {
     height: 600px;
     background-color: rgb(74, 74, 74);
     margin: 0 auto;
-    padding: 4%;
-    padding-bottom: 0;
-}
-
-.menu {
-    height: 30%;
-    width: 100%;
+    padding: 6%;
 }
 
 .notepad {
@@ -38,9 +32,25 @@ body {
     background-color: rgb(236, 236, 236);
 }
 
-.square {
+.squareone {
     width: 100%;
-    height: 50%;
+    height: 10%;
+}
+
+.squaretwo {
+    width: 100%;
+    height: 20%;
+}
+
+.squarebottom {
+    width: 100%;
+    height: 70%;
+}
+
+.top {
+    width: 50%;
+    height: 100%;
+    margin: 0;
 }
 
 .date {
@@ -53,6 +63,30 @@ body {
 
 .inline {
     display: inline-block;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.paddingleft {
+    padding-left: 10%;
+}
+
+.logo {
+    width: auto;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+.menu {
+    width: 33.33%;
+    height: 100%;
+    padding: 8%;
 }
 
 
@@ -87,10 +121,8 @@ Lists
 
 ul {
     list-style: none;
-    padding: 10%;
-    width: 60%;
-    text-align: center;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
 }
 
 li {
