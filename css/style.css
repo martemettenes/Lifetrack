@@ -18,7 +18,7 @@ body {
 
 #content {
     width: 350px;
-    height: auto;
+    height: 600px;
     background-color: rgb(74, 74, 74);
     margin: 0 auto;
     padding: 4%;
@@ -65,6 +65,8 @@ Text styling
 h2 {
     font-size: 25px;
     text-align: center;
+    margin-top: 0;
+    padding-top: ;
 }
 
 h3 {
