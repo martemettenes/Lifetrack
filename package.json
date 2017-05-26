@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/martemettenes/myApp2/issues"
   },
-  "homepage": "https://github.com/martemettenes/myApp2#readme"
+  "homepage": "https://github.com/martemettenes/myApp2#readme",
+  "dependencies": {
+    "electron": "^1.6.8"
+  }
 }

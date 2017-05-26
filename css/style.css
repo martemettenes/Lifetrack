@@ -12,7 +12,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     font-family: ABeeZee, helvetica, sans serif;
-    color: rgb(150, 193, 195);
+   /* color: rgb(150, 193, 195); */
+    color: rgb(255, 158, 116);
     background-color: rgb(74, 74, 74);
 }
 
@@ -22,15 +23,9 @@ body {
     height: 600px;
     margin: 0 auto;
     padding: 6%;
+    border: 1px solid white;
 }
 
-#content-overview {
-    /*width: 350px;
-    height: 600px;
-   background-color: rgb(74, 74, 74);
-    margin: 0 auto;
-    padding: 6%; */
-}
 
 .notepad {
     width: 100%;
@@ -115,6 +110,11 @@ img {
 
 .form {
     width: 100%;
+    margin-bottom: 12%;
+}
+
+.description {
+    height: 25%;
 }
 
 /*----------

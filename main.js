@@ -61,13 +61,30 @@ createWindow();
 
 
 
+
+
 // FUNCTIONS WITHIN THE APP //
 
 
-localStorage.setItem("listName", "some text");
 
-var data = localStorage.getItem("listName");
+
+function doFunction () {
+    
+var listname = document.forms["new"]["listname"].value ;
+var description = document.forms["new"]["description"].value ;
+    
+console.log(document.forms["new"]["listname"].value);
+
+    
+localStorage.setItem("chore", listname);
+localStorage.setItem("description", description);
+
+
+var data = localStorage.getItem("new");
 console.log(data);
+}
+
+
 
 
 
