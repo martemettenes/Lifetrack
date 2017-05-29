@@ -1,3 +1,5 @@
+/*
+
 // Require Electron and Node.js modules
 var electron = require('electron');
 var app = electron.app;
@@ -59,12 +61,10 @@ createWindow();
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-
-
+*/
 
 
 // FUNCTIONS WITHIN THE APP //
-
 
 
 
@@ -83,6 +83,51 @@ localStorage.setItem("description", description);
 var data = localStorage.getItem("new");
 console.log(data);
 }
+
+
+// Open CREATE NEW screen when plus-icon is pressed
+
+document.getElementById("frontplus").addEventListener("click", display);
+
+document.getElementById("headerlogo").addEventListener("click", frontPage);
+
+
+function display () {
+ document.getElementById('newlist').classList.remove('displaynone');
+document.getElementById('frontpage').classList.add('displaynone');
+document.getElementById('header').classList.remove('visibilityhidden');
+    console.log('display');
+
+}
+
+// Open CREATE NEW screen when plus-icon in small menu is pressed
+
+function frontPage () {
+document.getElementById('frontpage').classList.remove('displaynone');
+document.getElementById('newlist').classList.add('displaynone');
+document.getElementById('header').classList.add('visibilityhidden');
+    console.log('back to front page');   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
