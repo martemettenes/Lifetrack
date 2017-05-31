@@ -117,8 +117,6 @@ img {
     padding: 10%;
 }
 
-
-
 .displaynone {
     display: none;
 }
@@ -131,13 +129,37 @@ img {
     width: 100%;
 }
 
+input{
+    outline: none;
+    border: none;
+}
+
 .form {
     width: 100%;
-    margin-bottom: 12%;
+    margin-bottom: 8%;
+    background-color: #ececec;
+    color: rgba(74, 74, 74, 0.5);
+    border: none;
+    padding: 2%;
 }
 
 .description {
-    height: 25%;
+    height: 60px;
+}
+
+.border {
+    border-radius: 5px;
+}
+
+#addtask {
+    width: auto;
+    padding: 2%;
+    border-radius: 5px;
+    background-color: #ffbf8d;
+    border: none;
+    border-radius: 5px;
+    font-family: ABeeZee, helvetica, sans serif;
+    color: #4a4a4a;
 }
 
 
@@ -174,9 +196,54 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    padding-left: 10%;
 }
 
 li {
     text-align: left;
+    display: inline-block;
+    padding: 3%;
+    color: #4a4a4a;
+    border-radius: 5px;
+    background-color: #bfc1ae;
+    margin: 2%;
 }
+
+
+
+/*-----------
+
+button-colors
+
+-----------*/
+
+
+.background1 {
+    background-color: #ffbf8d;
+}
+
+.background2 {
+    background-color: #d9c1a2;
+}
+
+.background3 {
+    background-color: #bfc1ae;
+}
+
+.background4 {
+    background-color: #96c2c4;
+}
+
+.settings-button {
+    background-color: #96c2c4;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
