@@ -1,11 +1,8 @@
 // Kjører alle funksjoner som ligger i fuksjonen start
+var firstLoad = true;
 loadTasksFromLocalStorage();
-start();
+firstLoad = false;
 
-
-function start() {
-
-}
 
 // LOCAL STORAGE //
 
@@ -29,7 +26,7 @@ function doFunction() {
     localStorage.setItem("tasks", JSON.stringify(taskList));
 
     addLi(task);
-    
+
     // Hide id nothing (yay) when there is tasks available
     document.getElementById('nothing').classList.add('displaynone');
 }
@@ -55,26 +52,6 @@ function addLi(task) {
 }
 
 
-/* JUKSEKODE :
-
-addLi = function() {
-    var ul = document.getElementById("list");
-    var li = document.createElement("li");
-    var children = ul.children.length + 1
-    li.setAttribute("id", "element"+children)
-    li.appendChild(document.createTextNode("Element "+children));
-    ul.appendChild(li)
-}
-
-*/
-
-
-
-
-
-
-
-
 
 // Open CREATE NEW screen when plus-icon is pressed
 
@@ -91,8 +68,9 @@ document.getElementById("cogwheel").addEventListener("mousedown", openSettings);
 
 function display() {
     document.getElementById('newlist').classList.remove('displaynone');
-    document.getElementById('frontpage').classList.add('displaynone');
-//    document.getElementById('header').classList.remove('visibilityhidden');
+    document.getElementById('overview').classList.add('displaynone');
+    document.getElementById('settings').classList.add('displaynone');
+    document.getElementById('nothing').classList.add('displaynone');
     console.log('display');
 
     //    loadTasksFromLocalStorage();
@@ -110,23 +88,23 @@ function loadTasksFromLocalStorage() {
         document.getElementById('nothing').classList.remove('displaynone');
         return;
     }
-    
 
-
-    for (var i = 0; i < taskList.length; i++) {
-        var task = taskList[i];
-        addLi(task);
+    if (firstLoad == true) {
+        for (var i = 0; i < taskList.length; i++) {
+            var task = taskList[i];
+            addLi(task);
+        }
     }
-
 }
 
 // Open CREATE NEW screen when plus-icon in small menu is pressed
 
 function frontPage() {
-    document.getElementById('frontpage').classList.remove('displaynone');
     document.getElementById('newlist').classList.add('displaynone');
     document.getElementById('settings').classList.add('displaynone');
-//    document.getElementById('header').classList.add('visibilityhidden');
+    document.getElementById('overview').classList.remove('displaynone');
+    loadTasksFromLocalStorage();
+    //    document.getElementById('header').classList.add('visibilityhidden');
     console.log('back to front page');
 }
 
@@ -135,10 +113,26 @@ function frontPage() {
 
 function openSettings() {
     document.getElementById('settings').classList.remove('displaynone');
+    document.getElementById('overview').classList.add('displaynone');
+    document.getElementById('newlist').classList.add('displaynone');
+    document.getElementById('nothing').classList.add('displaynone');
 
-    document.getElementById('frontpage').classList.add('displaynone');
-
-//    document.getElementById('header').classList.remove('visibilityhidden');
+    //    document.getElementById('header').classList.remove('visibilityhidden');
 
     console.log('Change settings');
 }
+
+
+
+
+
+
+
+
+
+str = JSON.stringify(obj);
+str = JSON.stringify(obj, null, 4); // (Optional) beautiful indented output.
+console.log(str); // Logs output to dev tools console.
+alert(str); // Displays output using window.alert()
+
+

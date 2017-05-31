@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link href="https://fonts.googleapis.com/css?family=ABeeZee|Baloo|Cantarell" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Slabo+27px" rel="stylesheet">
 
 
 </head>
@@ -25,34 +26,17 @@
                 <div class="menu">
                 </div>
                 <div class="createnewlist menu">
-                    <img src="img/icons_white_0001_plus.png"></div>
+                    <img id="frontplus" src="img/icons_white_0001_plus.png"></div>
                 <div class="settings menu">
-                    <img src="img/icons_white_0003_cogwheel.png"></div>
+                    <img id="cogwheel" src="img/icons_white_0003_cogwheel.png"></div>
             </div>
         </div>
-        
+
 
         <!--Box that contains all content, and space (squaretwo)-->
 
 
         <div class="all-boxes">
-
-
-            <!--        00 front page, no lists -->
-
-            <div id="frontpage" class="">
-                <div class="">
-                    <div class="squarebottom"> <img src="img/lifetrack_logo_logo_coral.png" class="biglogo">
-                        <div class="flex frontmenu">
-                            <div id="frontplus" class="createnewlist fronticons">
-                                <img src="img/icons_white_0001_plus.png"></div>
-                            <div id="cogwheel" class="fronticons">
-                                <img src="img/icons_white_0003_cogwheel.png"></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
 
 
             <div class="squaretwo"></div>
@@ -74,7 +58,7 @@
                     <option> Medium Priority </option>
                     <option> Low Priority </option>
                     </select>
-<!--                    <input type="text" name="when" class="form border" placeholder="When do you have to do it?">-->
+                    <!--                    <input type="text" name="when" class="form border" placeholder="When do you have to do it?">-->
                     <input type="text" name="description" class="form border description" placeholder="Do the task need a description?">
                     <input id="addtask" type="button" value="Add New task" onclick="doFunction();">
                 </form>
@@ -88,28 +72,23 @@
 
             <div id="overview" class="">
                 <div class="squarebottom notepad inline">
-                    <div class="date">
-                        <h3> To do </h3>
-                    </div>
-                    <ul id="test">
-
+                   <div class="details background1"></div>
+                    <ul id="test" class="flex">
                     </ul>
                 </div>
             </div>
-            
-            
-<!--            03 Front page when there is no tasks-->
-            
+
+            <!--     03 Front page when there is no tasks-->
+
             <div id="nothing" class="displaynone">
                 <div class="squarebottom notepad inline">
-                    <div class="date">
-                        <h3> Yay! You've got nothing to do! </h3>
-                    </div>
+                        <h2> Yay! </h2>
+                        <h3> You've got nothing to do! </h3>
                 </div>
             </div>
 
 
-            <!--03 Settings-->
+            <!--      04 Settings-->
 
             <div id="settings" class="displaynone">
                 <h2> Change settings </h2>
