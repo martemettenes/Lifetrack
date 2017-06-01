@@ -52,14 +52,14 @@
                 <h2> New task </h2>
                 <form action="" method="post" name="new">
                     <input type="text" name="what" class="form border" placeholder="What do you have to do?">
-                    <select type="text" name="when" class="form border" placeholder="How urgent is it?">
+                    <select type="text" name="when" class="form border">
                         <option value="" disabled selected> How urgent? </option>
                     <option> High Priority </option>
                     <option> Medium Priority </option>
                     <option> Low Priority </option>
                     </select>
                     <!--                    <input type="text" name="when" class="form border" placeholder="When do you have to do it?">-->
-                    <input type="text" name="description" class="form border description" placeholder="Do the task need a description?">
+                    <textarea name="description" class="form border description" placeholder="Do the task need a description?"> </textarea>
                     <input id="addtask" type="button" value="Add New task" onclick="doFunction();">
                 </form>
             </div>
@@ -72,7 +72,13 @@
 
             <div id="overview" class="">
                 <div class="squarebottom notepad inline">
-                   <div class="details background1"></div>
+                    <div id="details" class="displaynone">
+                        <div id="what"></div>
+                        
+                        <div id="when"></div>
+                        <div id="desc"></div>
+                    </div>
+
                     <ul id="test" class="flex">
                     </ul>
                 </div>
@@ -82,8 +88,8 @@
 
             <div id="nothing" class="displaynone">
                 <div class="squarebottom notepad inline">
-                        <h2> Yay! </h2>
-                        <h3> You've got nothing to do! </h3>
+                    <h2> Yay! </h2>
+                    <h3> You've got nothing to do! </h3>
                 </div>
             </div>
 

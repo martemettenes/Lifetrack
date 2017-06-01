@@ -39,14 +39,48 @@ function doFunction() {
 function addLi(task) {
     var ul = document.getElementById("test");
     var li = document.createElement("li");
-    var children = ul.children.length + 1
-    li.setAttribute("id", "Marte " + children)
+    var children = ul.children.length + 1;
+
+
+
+    switch (task.when) {
+        case "High Priority":
+            console.log("we made a hi!!");
+            li.classList.add('background1');
+            break;
+        case "Medium Priority":
+            console.log("we made a med!!");
+            li.classList.add('background2');
+            break;
+        case "Low Priority":
+            console.log("we made a law!!");
+            li.classList.add('background3');
+            break;
+    }
+
+    li.setAttribute("id", "obj" + children);
     li.appendChild(document.createTextNode(task.what));
     ul.appendChild(li);
 
     li.task = task;
 
     li.addEventListener('mousedown', function () {
+        
+        document.getElementById('details').classList.remove('displaynone');
+
+        document.getElementById('what').textContent = "";
+        document.getElementById('what').appendChild(document.createTextNode(this.task.what));
+
+        document.getElementById('when').textContent = "";
+        document.getElementById('when').appendChild(document.createTextNode(this.task.when));
+
+        document.getElementById('desc').textContent = "";
+        document.getElementById('desc').appendChild(document.createTextNode(this.task.description));
+
+
+
+        //createTextNode(task.what);
+
         console.log('open popup', this.task);
     });
 }
@@ -71,6 +105,7 @@ function display() {
     document.getElementById('overview').classList.add('displaynone');
     document.getElementById('settings').classList.add('displaynone');
     document.getElementById('nothing').classList.add('displaynone');
+
     console.log('display');
 
     //    loadTasksFromLocalStorage();
@@ -103,8 +138,9 @@ function frontPage() {
     document.getElementById('newlist').classList.add('displaynone');
     document.getElementById('settings').classList.add('displaynone');
     document.getElementById('overview').classList.remove('displaynone');
+    document.getElementById('details').classList.add('displaynone');
+
     loadTasksFromLocalStorage();
-    //    document.getElementById('header').classList.add('visibilityhidden');
     console.log('back to front page');
 }
 
@@ -117,17 +153,22 @@ function openSettings() {
     document.getElementById('newlist').classList.add('displaynone');
     document.getElementById('nothing').classList.add('displaynone');
 
-    //    document.getElementById('header').classList.remove('visibilityhidden');
-
     console.log('Change settings');
 }
 
 
 
+// Create function that converts objects values to strings and displays the in each li
 
 
 
 
+
+
+
+
+
+/*
 
 
 str = JSON.stringify(obj);
@@ -136,3 +177,4 @@ console.log(str); // Logs output to dev tools console.
 alert(str); // Displays output using window.alert()
 
 
+*/

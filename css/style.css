@@ -4,13 +4,13 @@
     box-sizing: border-box;
 }
 
+
 /*
 
 font-family: 'Slabo 27px', serif;
 font-family: 'Dosis', sans-serif;
 
 */
-
 
 body {
     margin: 0 auto;
@@ -137,16 +137,19 @@ img {
     width: 100%;
 }
 
-input{
+input,
+textarea,
+select {
     outline: none;
     border: none;
+    padding: 2%;
 }
 
 .form {
     width: 100%;
     margin-bottom: 8%;
     background-color: #ececec;
-    color: rgba(74, 74, 74, 0.5);
+    color: rgba(74, 74, 74, 0.7);
     border: none;
     padding: 2%;
 }
@@ -205,31 +208,52 @@ ul {
     margin: 0;
     padding: 0;
     width: 100%;
-    
 }
 
 li {
-    text-align: left;
-    display: inline-block;
+    text-align: center;
     padding: 3%;
     color: #4a4a4a;
     border-radius: 5px;
     background-color: #bfc1ae;
     margin: 2%;
     flex-grow: 1;
+    width: auto;
+    height: 35px;
 }
 
 
 /* Pop-up details */
 
-.details {
-    min-height: 30px;
+#details {
+    min-height: 50px;
     height: auto;
     border-radius: 5px;
+    border: 1px solid #ffbf8d;
     margin-left: 2%;
     margin-right: 2%;
+    margin-bottom: 2%;
+    padding: 3%;
+/*    color: #4a4a4a;*/
+    color: #ffbf8d;
+    text-align: center;
 }
 
+#what {
+    font-size: 20px;
+    padding-bottom: 2%;
+}
+
+#when {
+    font-size: 15px;
+    font-style: italic;
+    padding-bottom: 2%;
+    opacity: 0.5;
+}
+
+#desc {
+    font-size: 15px;
+}
 
 
 /*-----------
@@ -238,20 +262,16 @@ button-colors
 
 -----------*/
 
-
 .background1 {
     background-color: #ffbf8d;
 }
 
-.background2 {
-    background-color: #d9c1a2;
-}
 
-.background3 {
+.background2 {
     background-color: #bfc1ae;
 }
 
-.background4 {
+.background3 {
     background-color: #96c2c4;
 }
 
@@ -259,13 +279,3 @@ button-colors
     background-color: #96c2c4;
     border-radius: 5px;
 }
-
-
-
-
-
-
-
-
-
-
