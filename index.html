@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css">
 
     <!--    Dark Theme Style Sheet-->
-<!--<link id="pagestyle" rel="stylesheet" href="css/style.css">-->
+    <!--<link id="pagestyle" rel="stylesheet" href="css/style.css">-->
 
     <!--    Light Theme Style Sheet-->
     <link id="pagestyle" rel="stylesheet" href="css/style.css">
@@ -57,16 +57,34 @@
             <div id="newlist" class="displaynone">
                 <h2> Create new task </h2>
                 <form action="" method="post" name="new">
-                    <input type="text" name="what" class="form border" placeholder="What do you have to do?">
-                    <select type="text" name="when" class="form border">
-                        <option value="" disabled selected> How urgent? </option>
+
+                    <div id="what-require" class="require displaynone">
+                        Please give your task a name:
+                    </div>
+
+                    <!--                   Enter task-->
+
+                    <input type="text" name="what" class="form border" placeholder="What do you have to do?" required>
+
+                    <div id="when-require" class="require displaynone">
+                        Please enter level of urgency:
+                    </div>
+
+                    <!--                    Enter urgency-->
+
+                    <select type="text" name="when" class="form border styling" required>
+                    <option class="disabled" value="" disabled selected> How urgent? </option>
                     <option> High Priority </option>
                     <option> Medium Priority </option>
                     <option> Low Priority </option>
                     </select>
-                    <!--                    <input type="text" name="when" class="form border" placeholder="When do you have to do it?">-->
-                    <textarea name="description" class="form border description" placeholder="Do the task need a description?"> </textarea>
-                    <input id="addtask" type="button" value="Add New task" onclick="doFunction();">
+
+
+
+                    <!--                    Enter Description-->
+
+                    <textarea name="description" class="form border description" placeholder="Do the task need a description?" required></textarea>
+                    <input id="addtask" type="submit" value="Add New task" onclick="doFunction();">
                 </form>
             </div>
 

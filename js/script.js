@@ -12,6 +12,12 @@ function doFunction() {
     var what = document.forms["new"]["what"].value;
     var when = document.forms["new"]["when"].value;
     var description = document.forms["new"]["description"].value;
+    
+    if(what == "" || when == "" ){
+        showEmpty(what, when);
+        return;
+    }
+    
 
     console.log(document.forms["new"]["what"].value);
     console.log(document.forms["new"]["when"].value);
@@ -32,7 +38,18 @@ function doFunction() {
     document.getElementById('nothing').classList.add('displaynone');
 }
 
-
+function showEmpty(_what, _when){
+    if (_what == "")
+        document.getElementById('what-require').classList.remove('displaynone');
+    else
+        document.getElementById('what-require').classList.add('displaynone');
+        
+    if (_when == "")
+        document.getElementById('when-require').classList.remove('displaynone');
+    else
+        document.getElementById('when-require').classList.add('displaynone');
+    
+}
 
 // Create a new <li> and add it to the <ul>
 
@@ -49,14 +66,17 @@ function addLi(task) {
         case "High Priority":
             console.log("we made a hi!!");
             li.classList.add('background1');
+          
             break;
         case "Medium Priority":
             console.log("we made a med!!");
             li.classList.add('background2');
+            
             break;
         case "Low Priority":
             console.log("we made a law!!");
             li.classList.add('background3');
+
             break;
     }
 
@@ -67,6 +87,27 @@ function addLi(task) {
     li.task = task;
 
     li.addEventListener('mousedown', function () {
+        if(li.classList.contains('background1')){
+            document.getElementById('details').classList.add('details-high')
+            
+            //Remove other styles
+            document.getElementById('details').classList.remove('details-med')
+            document.getElementById('details').classList.remove('details-low')
+        }
+        if(li.classList.contains('background2')){
+            document.getElementById('details').classList.add('details-med')
+            
+            //Remove other styles
+            document.getElementById('details').classList.remove('details-high')
+            document.getElementById('details').classList.remove('details-low')
+        }
+        if(li.classList.contains('background3')){
+            document.getElementById('details').classList.add('details-low')
+            
+            //Remove other styles
+            document.getElementById('details').classList.remove('details-high')
+            document.getElementById('details').classList.remove('details-med')
+        }
         
         document.getElementById('details').classList.remove('displaynone');
 
@@ -78,7 +119,6 @@ function addLi(task) {
 
         document.getElementById('desc').textContent = "";
         document.getElementById('desc').appendChild(document.createTextNode(this.task.description));
-
 
 
         //createTextNode(task.what);
@@ -131,6 +171,23 @@ function loadTasksFromLocalStorage() {
             var task = taskList[i];
             addLi(task);
         }
+    }
+    
+    // Quickfix to give LI's padding
+    
+    var lis = document.getElementsByTagName('li');
+    for (var i = 0; i < lis.length; i++){
+        lis[i].classList.remove('padding');
+    }
+    setTimeout(function(){
+        addPadding(lis);
+    },1);
+   
+}
+
+function addPadding(liList){
+    for (var i = 0; i < liList.length; i++){
+            liList[i].classList.add('padding');
     }
 }
 
