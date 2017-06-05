@@ -1,0 +1,308 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*
+
+font-family: 'Slabo 27px', serif;
+font-family: 'Dosis', sans-serif;
+
+*/
+
+body {
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Dosis', sans-serif;
+    /* color: rgb(150, 193, 195); */
+    color: #4a4a4a;
+    background-color: rgb(236, 236, 236);
+}
+
+#all-content {
+    width: 350px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 6%;
+    /*    border: 1px solid white;*/
+}
+
+.notepad {
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    margin: 0 auto;
+    /*  background-color: rgb(236, 236, 236); */
+    border-radius: 10px;
+}
+
+.header {
+    width: 100%;
+    height: 15%;
+    padding-bottom: 3%;
+}
+
+.all-boxes {
+    width: 100%;
+    height: 90%;
+}
+
+.squaretwo {
+    width: 100%;
+    height: 15%;
+}
+
+.squarebottom {
+    width: 100%;
+    height: 80%;
+}
+
+.top {
+    width: 50%;
+    height: 100%;
+    margin: 0;
+}
+
+.date {
+    /* background-color: rgb(150, 193, 195); */
+    width: 100%;
+    height: 15%;
+    padding: 0;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.paddingleft {
+    padding-left: 10%;
+}
+
+.logo {
+    width: auto;
+    height: 100%;
+}
+
+.biglogo {
+    width: 100%;
+    height: auto;
+    padding: 10%;
+}
+
+img {
+    width: 100%;
+}
+
+.menu {
+    width: 33.33%;
+    height: 100%;
+    padding: 7%;
+}
+
+.frontmenu {
+    width: 100%;
+    height: 50%;
+    padding: 20%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.fronticons {
+    width: 50%;
+    padding: 10%;
+}
+
+.displaynone {
+    display: none;
+}
+
+.visibilityhidden {
+    visibility: hidden;
+}
+
+#newlist {
+    width: 100%;
+}
+
+input,
+textarea,
+select {
+    outline: none;
+    border: none;
+    padding: 2%;
+    color: #4a4a4a;
+}
+
+.form {
+    width: 100%;
+    margin-bottom: 8%;
+    background-color: white;
+    border: none;
+    padding: 2%;
+}
+
+.description {
+    height: 60px;
+}
+
+.border {
+    border-radius: 5px;
+}
+
+#addtask {
+    width: auto;
+    padding: 3%;
+    border-radius: 5px;
+    background-color: #ffbf8d;
+    border: none;
+    border-radius: 5px;
+    font-family: ABeeZee, helvetica, sans serif;
+    font-size: 12px;
+    color: #4a4a4a;
+}
+
+
+/*----------
+
+Text styling
+
+----------*/
+
+h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 0;
+    padding-top: ;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 0;
+    padding-top: 5%;
+    color: rgb(255, 158, 116);
+}
+
+
+/*---
+
+Lists
+
+---*/
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+li {
+    text-align: center;
+    padding: 3%;
+    color: #4a4a4a;
+    border-radius: 5px;
+    background-color: #bfc1ae;
+    margin: 2%;
+    flex-grow: 1;
+    width: auto;
+    height: 35px;
+}
+
+
+/* Pop-up details */
+
+#details {
+    min-height: 50px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #ffbf8d;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    padding: 3%;
+    /*    color: #4a4a4a;*/
+    color: #ffbf8d;
+    text-align: center;
+}
+
+#what {
+    font-size: 20px;
+    padding-bottom: 2%;
+}
+
+#when {
+    font-size: 15px;
+    font-style: italic;
+    padding-bottom: 2%;
+    opacity: 0.5;
+}
+
+#desc {
+    font-size: 15px;
+}
+
+
+/*-----------
+
+button-colors
+
+-----------*/
+
+.background1 {
+    background-color: white;
+}
+
+.background2 {
+    background-color: #ffbf8d;
+    
+    
+}
+
+.background3 {
+    background-color: rgb(255, 158, 116);
+
+}
+
+
+/*-----------
+
+Settings
+
+-----------*/
+
+#settings {}
+
+.settings-button {
+    border-radius: 5px;
+    padding: 3%;
+    text-align: center;
+    margin-bottom: ;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 4%;
+}
+
+.dark {
+    background-color: #4a4a4a;
+    color: #ffbf8d;
+}
+
+.light {
+    background-color: #ffbf8d;
+    color: #4a4a4a;
+}
