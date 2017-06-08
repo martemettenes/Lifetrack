@@ -1,17 +1,21 @@
+/*
+--------------
+
+    STYLE
+
+--------------
+*/
+
+
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    /*    user-select: none;*/
+    user-select: none;
 }
 
 
-/*
-
-font-family: 'Slabo 27px', serif;
-font-family: 'Dosis', sans-serif;
-
-*/
 
 body {
     margin: 0 auto;
@@ -50,6 +54,13 @@ body {
     height: 15%;
     padding-bottom: 3%;
 }
+
+#headerlogo {
+    background-image: url(../img/lifetrack_logo_logodark.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 
 .all-boxes {
     width: 100%;
@@ -93,10 +104,6 @@ body {
     padding-left: 10%;
 }
 
-.logo {
-    width: auto;
-    height: 100%;
-}
 
 .biglogo {
     width: 100%;
@@ -112,6 +119,18 @@ img {
     width: 33.33%;
     height: 100%;
     padding: 7%;
+}
+
+#frontplus {
+    background-image: url(../img/icons_vector/corallight/myapp_icons_plus.svg);
+    background-repeat: no-repeat;
+    background-size: 70%;
+}
+
+#cogwheel {
+    background-image: url(../img/icons_vector/corallight/myapp_icons_cogwheel.svg);
+    background-repeat: no-repeat;
+    background-size: 70%;
 }
 
 .frontmenu {
@@ -200,7 +219,7 @@ textarea:focus:-ms-input-placeholder {
 .require {
     width: auto;
     height: auto;
-    border: 1px solid #ffbf8d;
+    border: 1px solid #f5835a;
     border-radius: 5px;
     font-size: 14px;
     padding: 3%;
@@ -235,7 +254,7 @@ textarea:focus:-ms-input-placeholder {
     border-radius: 5px;
     background-color: #ffbf8d;
     border: none;
-    font-family: ABeeZee, helvetica, sans serif;
+    font-family: 'Dosis', sans-serif;
     color: #4a4a4a;
 }
 
@@ -342,12 +361,58 @@ li {
 }
 
 .details-icons {
-    width: 20px;
-    height: auto;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 16%;
+    
+
+}
+
+.check3 {
+    background-image: url("../img/icons_vector/corallight/myapp_icons_check.svg");
+    width: 48%;
+    background-position: right;
+}
+
+.check2 {
+    background-image: url("../img/icons_vector/coralmed/myapp_icons_check.svg");
+    width: 48%;
+    background-position: right;
+}
+
+.check1 {
+    background-image: url("../img/icons_vector/coraldark/myapp_icons_check.svg");
+    width: 48%;
+    background-position: right;
+}
+
+.space {
+    width: 4%;
+}
+
+.cross3 {
+    background-image: url("../img/icons_vector/corallight/myapp_icons_cross.svg");
+    width: 48%;
+    background-position: left;
+}
+
+.cross2 {
+    background-image: url("../img/icons_vector/coralmed/myapp_icons_cross.svg");
+    width: 48%;
+    background-position: left;
+}
+
+.cross1 {
+    background-image: url("../img/icons_vector/coraldark/myapp_icons_cross.svg");
+    width: 48%;
+    background-position: left;
 }
 
 #details-menu {
     margin-top: 5%;
+    min-height:30px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #what {
@@ -407,12 +472,17 @@ Nothing
     /*    border: 1px solid #ffbf8d; */
     padding: 3%;
     text-align: center;
+    height: 40%;
 }
 
 .thumbsup {
-    width: 20%;
-    height: auto;
+    height: 80px;
     margin-bottom: 5%;
+    background-image: url(../img/icons_vector/corallight/myapp_icons_thumbsup.svg);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: center;
+    margin-bottom: 0;
 }
 
 

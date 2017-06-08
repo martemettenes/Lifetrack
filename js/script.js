@@ -104,29 +104,59 @@ function addLi(task) {
     li.addEventListener('mousedown', function () {
 
         currentDetailLi = li;
-        
-//        li.classList.add('details');
+
+        //        li.classList.add('details');
 
         if (li.classList.contains('background1')) {
             document.getElementById('details').classList.add('details-high')
+            document.getElementById('check').classList.add('check1')
+            document.getElementById('cross').classList.add('cross1')
 
             //Remove other styles
             document.getElementById('details').classList.remove('details-med')
             document.getElementById('details').classList.remove('details-low')
+            
+            //Remove styles Check
+            document.getElementById('check').classList.remove('check2')
+            document.getElementById('check').classList.remove('check3')
+            
+            //Remove styles Cross
+            document.getElementById('cross').classList.remove('cross2')
+            document.getElementById('cross').classList.remove('cross3')
         }
         if (li.classList.contains('background2')) {
             document.getElementById('details').classList.add('details-med')
+            document.getElementById('check').classList.add('check2')
+            document.getElementById('cross').classList.add('cross2')
 
             //Remove other styles
             document.getElementById('details').classList.remove('details-high')
             document.getElementById('details').classList.remove('details-low')
+            
+            //Remove styles Check
+            document.getElementById('check').classList.remove('check1')
+            document.getElementById('check').classList.remove('check3')
+            
+            //Remove styles Cross
+            document.getElementById('cross').classList.remove('cross1')
+            document.getElementById('cross').classList.remove('cross3')
         }
         if (li.classList.contains('background3')) {
             document.getElementById('details').classList.add('details-low')
+            document.getElementById('check').classList.add('check3')
+            document.getElementById('cross').classList.add('cross3')
 
             //Remove other styles
             document.getElementById('details').classList.remove('details-high')
             document.getElementById('details').classList.remove('details-med')
+            
+            //Remove styles Check
+            document.getElementById('check').classList.remove('check1')
+            document.getElementById('check').classList.remove('check2')
+            
+            //Remove styles Cross
+            document.getElementById('cross').classList.remove('cross1')
+            document.getElementById('cross').classList.remove('cross2')
         }
 
         document.getElementById('details').classList.remove('displaynone');
@@ -188,12 +218,12 @@ document.getElementById("cogwheel").addEventListener("mousedown", openSettings);
 
 
 function display() {
-     //Reset Form
+    //Reset Form
     document.getElementById("new-task-form").reset();
     document.getElementById('what-require').classList.add('displaynone');
     document.getElementById('when-require').classList.add('displaynone');
-    
-    
+
+
     document.getElementById('newtask').classList.remove('displaynone');
     document.getElementById('overview').classList.add('displaynone');
     document.getElementById('settings').classList.add('displaynone');
@@ -264,8 +294,8 @@ function frontPage() {
     document.getElementById('overview').classList.remove('displaynone');
 
     document.getElementById('details').classList.add('displaynone');
-    
-   
+
+
 
     loadTasksFromLocalStorage();
     console.log('back to front page');
