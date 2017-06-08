@@ -131,11 +131,7 @@ img {
     display: none;
 }
 
-.visibilityhidden {
-    visibility: hidden;
-}
-
-#newlist {
+#newtask {
     width: 100%;
 }
 
@@ -215,7 +211,7 @@ textarea:focus:-ms-input-placeholder {
     width: 100%;
     margin-bottom: 8%;
     background-color: #ececec;
-    color: rgb(74, 74, 74);
+    color: #4a4a4a;
     border: none;
     padding: 2%;
 }
@@ -237,9 +233,8 @@ textarea:focus:-ms-input-placeholder {
     width: auto;
     padding: 3%;
     border-radius: 5px;
-    background-color: #f5835a;
+    background-color: #ffbf8d;
     border: none;
-    border-radius: 5px;
     font-family: ABeeZee, helvetica, sans serif;
     color: #4a4a4a;
 }
@@ -434,13 +429,13 @@ Settings
     padding: 3%;
     text-align: center;
     margin-bottom: ;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     margin-bottom: 4%;
 }
 
 .dark {
-    background-color: rgb(150, 193, 195);
+    background-color: #ff9e74;
     color: #4a4a4a;
 }
 

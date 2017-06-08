@@ -188,7 +188,13 @@ document.getElementById("cogwheel").addEventListener("mousedown", openSettings);
 
 
 function display() {
-    document.getElementById('newlist').classList.remove('displaynone');
+     //Reset Form
+    document.getElementById("new-task-form").reset();
+    document.getElementById('what-require').classList.add('displaynone');
+    document.getElementById('when-require').classList.add('displaynone');
+    
+    
+    document.getElementById('newtask').classList.remove('displaynone');
     document.getElementById('overview').classList.add('displaynone');
     document.getElementById('settings').classList.add('displaynone');
     document.getElementById('nothing').classList.add('displaynone');
@@ -253,11 +259,13 @@ function addPadding(liList) {
 // Open CREATE NEW screen when plus-icon in small menu is pressed
 
 function frontPage() {
-    document.getElementById('newlist').classList.add('displaynone');
+    document.getElementById('newtask').classList.add('displaynone');
     document.getElementById('settings').classList.add('displaynone');
     document.getElementById('overview').classList.remove('displaynone');
 
     document.getElementById('details').classList.add('displaynone');
+    
+   
 
     loadTasksFromLocalStorage();
     console.log('back to front page');
@@ -269,7 +277,7 @@ function frontPage() {
 function openSettings() {
     document.getElementById('settings').classList.remove('displaynone');
     document.getElementById('overview').classList.add('displaynone');
-    document.getElementById('newlist').classList.add('displaynone');
+    document.getElementById('newtask').classList.add('displaynone');
     document.getElementById('nothing').classList.add('displaynone');
     //document.getElementById('test').innerHTML = '';
 
