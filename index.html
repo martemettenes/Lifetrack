@@ -26,15 +26,15 @@
         <!--Header with logo and menu icons-->
 
         <div id="header" class="header flex">
-            <div id="headerlogo" class="top"> <img src="img/lifetrack_logo_logo_coral.png" alt="logo" class="logo">
+            <div id="headerlogo" class="top"> <img src="img/lifetrack_logo_logo_coral.png" alt="logo" class="logo clickable">
             </div>
             <div class="top flex paddingleft">
                 <div class="menu">
                 </div>
                 <div class="createnewlist menu">
-                    <img id="frontplus" src="img/icons_white_0001_plus.png"></div>
+                    <img id="frontplus" src="img/icons_white_0001_plus.png" class="clickable"></div>
                 <div class="settings menu">
-                    <img id="cogwheel" src="img/icons_white_0003_cogwheel.png"></div>
+                    <img id="cogwheel" src="img/icons_white_0003_cogwheel.png" class="clickable"></div>
             </div>
         </div>
 
@@ -56,7 +56,7 @@
 
             <div id="newlist" class="displaynone">
                 <h2> Create new task </h2>
-                <form action="" method="post" name="new">
+                <form id="new-task-form" action="" method="post" name="new">
 
                     <div id="what-require" class="require displaynone">
                         Please give your task a name:
@@ -72,7 +72,7 @@
 
                     <!--                    Enter urgency-->
 
-                    <select type="text" name="when" class="form border styling" required>
+                    <select id="select-when" type="text" name="when" class="form border styling clickable" required>
                     <option class="disabled" value="" disabled selected> How urgent? </option>
                     <option> High Priority </option>
                     <option> Medium Priority </option>
@@ -83,24 +83,26 @@
 
                     <!--                    Enter Description-->
 
-                    <textarea name="description" class="form border description" placeholder="Do the task need a description?" required></textarea>
-                    <input id="addtask" type="submit" value="Add New task" onclick="doFunction();">
+                    <textarea id="description-area" name="description" class="form border description" placeholder="Do the task need a description?" required></textarea>
+                    <input id="addtask" type="submit" class="clickable" value="Add task" onclick="doFunction();">
                 </form>
             </div>
 
-
-
             <!--            02 Overview page that show today/current/chosen list-->
-
 
 
             <div id="overview" class="">
                 <div class="squarebottom notepad inline">
                     <div id="details" class="displaynone">
+
                         <div id="what"></div>
 
                         <div id="when"></div>
                         <div id="desc"></div>
+                        <div id="details-menu">
+                            <img src="img/icons_white_0000_check.png" alt="check" class="details-icons clickable" onclick="crossOut();">
+                            <img src="img/icons_white_0002_cross.png" alt="cross" class="details-icons clickable" onclick="crossOut();">
+                        </div>
                     </div>
 
                     <ul id="test" class="flex">
@@ -111,9 +113,10 @@
             <!--     03 Front page when there is no tasks-->
 
             <div id="nothing" class="displaynone">
-                <div class="squarebottom notepad inline">
-                    <h2> Yay! </h2>
-                    <h3> You have no pending tasks </h3>
+                <div class="notasks inline">
+                    <img src="img/icons_white_0016_thumbsup.png" alt="thumbs up" class="thumbsup">
+                    <!--                    <h2> Yay! </h2>-->
+                    <h3> You have no pending tasks! </h3>
                 </div>
             </div>
 
@@ -122,10 +125,10 @@
 
             <div id="settings" class="displaynone">
                 <h2> Change settings </h2>
-                <div id="dark" class="settings-button dark" onclick="swapStyleSheetDark('css/style.css')">
+                <div id="dark" class="settings-button dark clickable" onclick="swapStyleSheetDark('css/style.css')">
                     Dark Color Theme
                 </div>
-                <div id="light" class="settings-button light" onclick="swapStyleSheetDark('css/lightstyle.css')">
+                <div id="light" class="settings-button light clickable" onclick="swapStyleSheetDark('css/lightstyle.css')">
                     Light Color Theme
                 </div>
 

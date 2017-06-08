@@ -1,23 +1,27 @@
 // Kjører alle funksjoner som ligger i fuksjonen start
 //used to NOT spawn li when loading tasks more than once
+
 var firstLoad = true;
 loadTasksFromLocalStorage();
 firstLoad = false;
+
+var currentDetailLi;
 
 
 // LOCAL STORAGE //
 
 function doFunction() {
-
     var what = document.forms["new"]["what"].value;
     var when = document.forms["new"]["when"].value;
     var description = document.forms["new"]["description"].value;
-    
-    if(what == "" || when == "" ){
+    var id = Date.now();
+
+    if (what == "" || when == "") {
+        console.log("shitstuff - " + what + when)
         showEmpty(what, when);
         return;
     }
-    
+
 
     console.log(document.forms["new"]["what"].value);
     console.log(document.forms["new"]["when"].value);
@@ -27,28 +31,39 @@ function doFunction() {
     var task = {
         'what': what,
         'when': when,
-        'description': description
+        'description': description,
+        'id': id
     };
     taskList.push(task);
+
     localStorage.setItem("tasks", JSON.stringify(taskList));
 
     addLi(task);
 
     // Hide id nothing (yay) when there is tasks available
     document.getElementById('nothing').classList.add('displaynone');
+
+    //Reset Form
+    document.getElementById("new-task-form").reset();
+
+    //    // Make "missing input"-warnings go away
+    document.getElementById('what-require').classList.add('displaynone');
+    document.getElementById('when-require').classList.add('displaynone');
+    console.log('remove require-boxes');
+
 }
 
-function showEmpty(_what, _when){
+function showEmpty(_what, _when) {
     if (_what == "")
         document.getElementById('what-require').classList.remove('displaynone');
     else
         document.getElementById('what-require').classList.add('displaynone');
-        
+
     if (_when == "")
         document.getElementById('when-require').classList.remove('displaynone');
     else
         document.getElementById('when-require').classList.add('displaynone');
-    
+
 }
 
 // Create a new <li> and add it to the <ul>
@@ -58,7 +73,7 @@ function addLi(task) {
     var ul = document.getElementById("test");
     var li = document.createElement("li");
     var children = ul.children.length + 1;
-    
+
 
 
 
@@ -66,12 +81,12 @@ function addLi(task) {
         case "High Priority":
             console.log("we made a hi!!");
             li.classList.add('background1');
-          
+
             break;
         case "Medium Priority":
             console.log("we made a med!!");
             li.classList.add('background2');
-            
+
             break;
         case "Low Priority":
             console.log("we made a law!!");
@@ -80,35 +95,38 @@ function addLi(task) {
             break;
     }
 
-    li.setAttribute("id", "obj" + children);
+    li.setAttribute("id", task.id);
     li.appendChild(document.createTextNode(task.what));
     ul.appendChild(li);
 
     li.task = task;
 
     li.addEventListener('mousedown', function () {
-        if(li.classList.contains('background1')){
+
+        currentDetailLi = li;
+
+        if (li.classList.contains('background1')) {
             document.getElementById('details').classList.add('details-high')
-            
+
             //Remove other styles
             document.getElementById('details').classList.remove('details-med')
             document.getElementById('details').classList.remove('details-low')
         }
-        if(li.classList.contains('background2')){
+        if (li.classList.contains('background2')) {
             document.getElementById('details').classList.add('details-med')
-            
+
             //Remove other styles
             document.getElementById('details').classList.remove('details-high')
             document.getElementById('details').classList.remove('details-low')
         }
-        if(li.classList.contains('background3')){
+        if (li.classList.contains('background3')) {
             document.getElementById('details').classList.add('details-low')
-            
+
             //Remove other styles
             document.getElementById('details').classList.remove('details-high')
             document.getElementById('details').classList.remove('details-med')
         }
-        
+
         document.getElementById('details').classList.remove('displaynone');
 
         document.getElementById('what').textContent = "";
@@ -125,6 +143,31 @@ function addLi(task) {
 
         console.log('open popup', this.task);
     });
+}
+
+
+// Remove LI task when icon cross or icon check is pressed
+
+
+function crossOut() {
+    currentDetailLi.parentElement.removeChild(currentDetailLi);
+    console.log("We removed " + currentDetailLi.getAttribute('id'));
+
+    var taskList = JSON.parse(localStorage.getItem("tasks"))
+
+    for (var i = 0; i < taskList.length; i++) {
+        if (taskList[i].id == currentDetailLi.getAttribute('id')) {
+            taskList.splice(i, 1);
+        }
+    }
+
+    localStorage.setItem("tasks", JSON.stringify(taskList));
+
+    document.getElementById('details').classList.add('displaynone');
+
+    if (taskList == 0) {
+        document.getElementById('nothing').classList.remove('displaynone');
+    }
 }
 
 
@@ -154,6 +197,15 @@ function display() {
 
 }
 
+
+function compare(a, b) {
+    if (a.when.toUpperCase() < b.when.toUpperCase())
+        return -1;
+    if (a.when.toUpperCase() > b.when.toUpperCase())
+        return 1;
+    return 0;
+}
+
 function loadTasksFromLocalStorage() {
 
     // read all tasks
@@ -161,7 +213,12 @@ function loadTasksFromLocalStorage() {
     var taskString = '';
 
     var taskList = JSON.parse(localStorage.getItem("tasks"));
+
     if (taskList == null) {
+        document.getElementById('nothing').classList.remove('displaynone');
+        return;
+    }
+    if (taskList.length <= 0) {
         document.getElementById('nothing').classList.remove('displaynone');
         return;
     }
@@ -172,22 +229,22 @@ function loadTasksFromLocalStorage() {
             addLi(task);
         }
     }
-    
-    // Quickfix to give LI's padding
-    
+
+    // Quickfix to give LI's correct padding (bugfix)
+
     var lis = document.getElementsByTagName('li');
-    for (var i = 0; i < lis.length; i++){
+    for (var i = 0; i < lis.length; i++) {
         lis[i].classList.remove('padding');
     }
-    setTimeout(function(){
+    setTimeout(function () {
         addPadding(lis);
-    },1);
-   
+    }, 1);
+
 }
 
-function addPadding(liList){
-    for (var i = 0; i < liList.length; i++){
-            liList[i].classList.add('padding');
+function addPadding(liList) {
+    for (var i = 0; i < liList.length; i++) {
+        liList[i].classList.add('padding');
     }
 }
 
@@ -197,7 +254,7 @@ function frontPage() {
     document.getElementById('newlist').classList.add('displaynone');
     document.getElementById('settings').classList.add('displaynone');
     document.getElementById('overview').classList.remove('displaynone');
-    
+
     document.getElementById('details').classList.add('displaynone');
 
     loadTasksFromLocalStorage();
@@ -219,29 +276,16 @@ function openSettings() {
 
 
 
-// Create function that converts objects values to strings and displays the in each li
+// Switching between colour themes
 
 
 
-function swapStyleSheetDark(sheet){
-	document.getElementById('pagestyle').setAttribute('href', sheet);
+function swapStyleSheetDark(sheet) {
+    document.getElementById('pagestyle').setAttribute('href', sheet);
     console.log('dark');
 }
 
-function swapStyleSheetLight(sheet){
-	document.getElementById('pagestyle').setAttribute('href', sheet);
+function swapStyleSheetLight(sheet) {
+    document.getElementById('pagestyle').setAttribute('href', sheet);
     console.log('light');
 }
-
-
-
-/*
-
-
-str = JSON.stringify(obj);
-str = JSON.stringify(obj, null, 4); // (Optional) beautiful indented output.
-console.log(str); // Logs output to dev tools console.
-alert(str); // Displays output using window.alert()
-
-
-*/

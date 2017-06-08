@@ -2,6 +2,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    user-select: none;
 }
 
 
@@ -23,6 +24,10 @@ body {
     color: rgb(255, 158, 116);
     background-color: rgb(74, 74, 74);
     overflow: hidden;
+}
+
+.clickable {
+    cursor: pointer;
 }
 
 #all-content {
@@ -146,6 +151,56 @@ select {
     font-size: 12px;
 }
 
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+
+
+/* FF 4-18 */
+
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+
+/* FF 19+ */
+
+input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+
+/* IE 10+ */
+
+textarea:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+textarea:focus:-moz-placeholder {
+    color: transparent;
+}
+
+
+/* FF 4-18 */
+
+textarea:focus::-moz-placeholder {
+    color: transparent;
+}
+
+
+/* FF 19+ */
+
+textarea:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+
+/* IE 10+ */
+
 .require {
     width: auto;
     height: auto;
@@ -242,6 +297,8 @@ li {
     flex-grow: 1;
     height: 35px;
     width: auto;
+    cursor: pointer;
+    user-select: none;
 }
 
 .padding {
@@ -256,12 +313,10 @@ li {
     min-height: 50px;
     height: auto;
     border-radius: 5px;
-    
     margin-left: 2%;
     margin-right: 2%;
     margin-bottom: 2%;
-    padding: 3%;
-    
+    padding: 4%;
     text-align: center;
 }
 
@@ -280,7 +335,14 @@ li {
     color: #96c2c4;
 }
 
+.details-icons {
+    width: 20px;
+    height: auto;
+}
 
+#details-menu {
+    margin-top: 3%;
+}
 
 #what {
     font-size: 20px;
@@ -301,7 +363,7 @@ li {
 
 /*-----------
 
-button-colors
+Button-colors
 
 -----------*/
 
@@ -324,7 +386,27 @@ Overview
 
 -----------*/
 
-#overview {
+#overview {}
+
+
+/*-----------
+
+Nothing
+
+-----------*/
+
+.notasks {
+    width: 100%;
+    border-radius: 5px;
+    /*    border: 1px solid #ffbf8d; */
+    padding: 3%;
+    text-align: center;
+}
+
+.thumbsup {
+    width: 20%;
+    height: auto;
+    margin-bottom: 5%;
 }
 
 
