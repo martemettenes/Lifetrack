@@ -104,6 +104,8 @@ function addLi(task) {
     li.addEventListener('mousedown', function () {
 
         currentDetailLi = li;
+        
+//        li.classList.add('details');
 
         if (li.classList.contains('background1')) {
             document.getElementById('details').classList.add('details-high')
