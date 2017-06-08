@@ -2,7 +2,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    user-select: none;
+    /*    user-select: none;*/
 }
 
 
@@ -21,7 +21,7 @@ body {
     flex-wrap: wrap;
     font-family: 'Dosis', sans-serif;
     /* color: rgb(150, 193, 195); */
-    color: rgb(255, 158, 116);
+    color: #f5835a;
     background-color: rgb(74, 74, 74);
     overflow: hidden;
 }
@@ -235,9 +235,9 @@ textarea:focus:-ms-input-placeholder {
 
 #addtask {
     width: auto;
-    padding: 2%;
+    padding: 3%;
     border-radius: 5px;
-    background-color: #ffbf8d;
+    background-color: #f5835a;
     border: none;
     border-radius: 5px;
     font-family: ABeeZee, helvetica, sans serif;
@@ -320,19 +320,30 @@ li {
     text-align: center;
 }
 
+.details {
+    min-height: 50px;
+    height: auto;
+    border-radius: 5px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    padding: 4%;
+    text-align: center;
+}
+
 .details-high {
-    border: 1px solid #ffbf8d;
-    color: #ffbf8d;
+    border: 1px solid #f5835a;
+    color: #f5835a;
 }
 
 .details-med {
-    border: 1px solid #bfc1ae;
-    color: #bfc1ae;
+    border: 1px solid #ff9e74;
+    color: #ff9e74;
 }
 
 .details-low {
-    border: 1px solid #96c2c4;
-    color: #96c2c4;
+    border: 1px solid #ffbf8d;
+    color: #ffbf8d;
 }
 
 .details-icons {
@@ -341,7 +352,7 @@ li {
 }
 
 #details-menu {
-    margin-top: 3%;
+    margin-top: 5%;
 }
 
 #what {
@@ -368,15 +379,15 @@ Button-colors
 -----------*/
 
 .background1 {
-    background-color: #ffbf8d;
+    background-color: #f5835a;
 }
 
 .background2 {
-    background-color: #bfc1ae;
+    background-color: #ff9e74;
 }
 
 .background3 {
-    background-color: #96c2c4;
+    background-color: #ffbf8d;
 }
 
 
