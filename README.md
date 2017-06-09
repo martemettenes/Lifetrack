@@ -1,3 +1,3 @@
 A school project. 
 
-To to-app to keep your organized
+To do-app to keep your organized
