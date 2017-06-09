@@ -1,3 +1,3 @@
 A school project. 
 
-To do-app to keep your organized
+To do app with tasks and deadlines all in the same place.
